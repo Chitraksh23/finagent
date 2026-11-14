@@ -1,0 +1,22 @@
+name: CI
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      # Replays recorded fixtures: no network, no LLM calls, no API keys, no cost.
+      - name: Eval regression gate (replay)
+        run: |
+          if [ -d fixtures/llm ]; then npm run eval:replay; else echo "No fixtures yet. Run 'npm run eval:record' locally and commit fixtures/."; fi
+      - run: npm run build

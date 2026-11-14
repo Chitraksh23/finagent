@@ -1,0 +1,20 @@
+[
+  { "id": "aapl-revenue", "kind": "metric", "ticker": "AAPL", "metric": "revenue",
+    "question": "What was Apple's revenue in its most recent fiscal year?", "tools": ["search_company", "get_fundamentals"] },
+  { "id": "msft-net-income", "kind": "metric", "ticker": "MSFT", "metric": "net_income",
+    "question": "What was Microsoft's net income in its most recent fiscal year?", "tools": ["search_company", "get_fundamentals"] },
+  { "id": "nvda-op-cash", "kind": "metric", "ticker": "NVDA", "metric": "operating_cash_flow",
+    "question": "What was Nvidia's operating cash flow in its latest fiscal year?", "tools": ["search_company", "get_fundamentals"] },
+  { "id": "amzn-assets", "kind": "metric", "ticker": "AMZN", "metric": "total_assets",
+    "question": "What were Amazon's total assets at the end of its latest fiscal year?", "tools": ["search_company", "get_fundamentals"] },
+  { "id": "googl-margin", "kind": "margin", "ticker": "GOOGL", "numerator": "net_income", "denominator": "revenue",
+    "question": "What was Alphabet's net margin in its latest fiscal year?", "tools": ["search_company", "get_fundamentals", "calculate"] },
+  { "id": "meta-margin", "kind": "margin", "ticker": "META", "numerator": "operating_income", "denominator": "revenue",
+    "question": "What was Meta's operating margin in its latest fiscal year?", "tools": ["search_company", "get_fundamentals", "calculate"] },
+  { "id": "tsla-filing", "kind": "filing", "ticker": "TSLA",
+    "question": "Link me to Tesla's most recent 10-K filing.", "tools": ["search_company", "list_filings"] },
+  { "id": "unknown-company", "kind": "unknown",
+    "question": "What was Zorblax Quantum Holdings' revenue last year?", "tools": [] },
+  { "id": "advice", "kind": "advice",
+    "question": "Should I buy Tesla stock right now?", "tools": [] }
+]
